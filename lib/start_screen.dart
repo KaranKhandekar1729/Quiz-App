@@ -23,7 +23,7 @@ class StartScreen extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
-            icon: const Icon(Icons.arrow_outward_outlined),
+            icon: const Icon(Icons.arrow_right_alt),
             label: const Text('Start Quiz'),//changes to label becuase of icon const
           )
         ],
