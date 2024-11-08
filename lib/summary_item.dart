@@ -9,7 +9,7 @@ class SummaryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final ifAnswerCorrect = data['user_answer'] == data['correct_answer'];
     return Container(
-      width: 500,
+      width: double.infinity,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
