@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.chosenAnswers});
@@ -9,7 +10,7 @@ class ResultScreen extends StatelessWidget {
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
 
-    for (var i = 0; i <= chosenAnswers.length; i++) {
+    for (var i = 0; i < chosenAnswers.length; i++) {
       summary.add(
         {
         'question_index': i,
@@ -34,7 +35,7 @@ class ResultScreen extends StatelessWidget {
           children: [
             const Text('You answered X out of Y questions correctly!'),
             const SizedBox(height: 30),
-            const Text('List of answers and questions..'),
+            QuestionsSummary(getSummaryData()),
             const SizedBox(height: 30),
             TextButton(
               onPressed: () {},
