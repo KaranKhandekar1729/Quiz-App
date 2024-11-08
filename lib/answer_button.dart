@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton(this.answerText, this.onPressed, {super.key});
@@ -19,7 +20,10 @@ class AnswerButton extends StatelessWidget {
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
       ),
-      child: Text(answerText)
+      child: Text(
+        answerText, 
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
