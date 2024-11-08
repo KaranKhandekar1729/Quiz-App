@@ -22,14 +22,14 @@ Welcome to the **Flutter Quiz App**! This interactive quiz application, built wi
 
 ## Screenshots
 
-1. **Start Screen**  
-   ![Start Screen](assets/images/for_readme/startscreen.png)
+## Screenshots
 
-2. **Question Screen**  
-   ![Question Screen](assets/images/for_readme/questionsscreen.png)
+## Screenshots
 
-3. **Result Screen**  
-   ![Result Screen](assets/images/for_readme/resultscreen.png)
+| Start Screen | Question Screen | Result Screen |
+|--------------|-----------------|---------------|
+| ![Start Screen](assets/images/for_readme/startscreen.png) | ![Question Screen](assets/images/for_readme/questionsscreen.png) | ![Result Screen](assets/images/for_readme/resultscreen.png) |
+
 
 ---
 
