@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 
@@ -7,7 +8,9 @@ class ResultScreen extends StatelessWidget {
 
   final List<String> chosenAnswers;
 
-  List<Map<String, Object>> getSummaryData() {
+  // ignore: non_constant_identifier_names
+  List<Map<String, Object>> get SummaryData {
+    //getter method
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
@@ -24,13 +27,18 @@ class ResultScreen extends StatelessWidget {
     return summary;
   }
 
+  // final void Function() startQuiz;
+
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
+    final summaryData = SummaryData;
     final numTotalQuestions = questions.length;
-    final numCorrectQuestions = summaryData.where((data) {
-      return data['user_answer'] == data['correct_answer'];
-    }).length; //where() doesnt change the original list
+    final numCorrectQuestions = summaryData
+        .where(
+          (data) =>
+              data['user_answer'] == data['correct_answer'], //arrow function
+        )
+        .length; //where() doesnt change the original list
 
     return SizedBox(
       width: double.infinity,
@@ -41,6 +49,11 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              style: GoogleFonts.lato(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -49,9 +62,16 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            TextButton(
+            TextButton.icon(
               onPressed: () {},
-              child: const Text('Restart Quiz!'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: const Color.fromARGB(255, 2, 27, 253),
+              ),
+              icon: const Icon(Icons.refresh_sharp),
+              label: const Text(
+                'Restart Quiz!',
+                style: TextStyle(fontSize: 20),
+              ), //changes to label becuase of icon const
             ),
           ],
         ),
