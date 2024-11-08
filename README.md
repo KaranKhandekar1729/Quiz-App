@@ -46,7 +46,7 @@ To get a local copy of the app up and running, follow these steps.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/KaranKhandekar1729/quizapp.git
+   git clone https://github.com/KaranKhandekar1729/Quiz-App.git
    ```
 2. **Navigate the project directory**:
    ```bash
@@ -80,5 +80,5 @@ Contributions are what make the open-source community such a great place to lear
 ## Contact
 Karan Khandekar - karankhandekar028@gmail.com
 
-Project Link: https://github.com/KaranKhandekar1729/quizapp
+Project Link: https://github.com/KaranKhandekar1729/Quiz-App
 
