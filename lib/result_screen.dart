@@ -4,9 +4,15 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.chosenAnswers});
+  const ResultScreen({
+    super.key,
+    required this.chosenAnswers,
+    required this.onRestart,
+  });
 
   final List<String> chosenAnswers;
+
+  final VoidCallback onRestart;
 
   // ignore: non_constant_identifier_names
   List<Map<String, Object>> get SummaryData {
@@ -35,10 +41,8 @@ class ResultScreen extends StatelessWidget {
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData
         .where(
-          (data) =>
-              data['user_answer'] == data['correct_answer'], //arrow function
-        )
-        .length; //where() doesnt change the original list
+          (data) => data['user_answer'] == data['correct_answer'], //arrow function
+        ).length; //where() doesnt change the original list
 
     return SizedBox(
       width: double.infinity,
@@ -63,7 +67,7 @@ class ResultScreen extends StatelessWidget {
               height: 30,
             ),
             TextButton.icon(
-              onPressed: () {},
+              onPressed: onRestart,
               style: OutlinedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 2, 27, 253),
               ),
