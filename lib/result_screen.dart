@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/summary_Item.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({
@@ -62,7 +62,14 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            QuestionsSummary(summaryData),
+            SizedBox(
+              height: 300,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: summaryData.map((data) => SummaryItem(data)).toList(),
+                ),
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
